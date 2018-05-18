@@ -1,0 +1,52 @@
+<?php
+
+    /************************************************************************
+     * moShBox - mosfetkiller-ShoutBox                                      *
+     * Copyright 2008, 2009, 2010                                           *
+     *   Lukas Palm <kingmassivid@gmail.de>,                                *
+     *   Paul Wilhelm <paul@mosfetkiller.de>                                *
+     *                                                                      *
+     * Version 1.4                                                          *
+     *                                                                      *
+     * This file is part of moShBox.                                        *
+     *                                                                      *
+     * moShBox is free software: you can redistribute it and/or modify      *
+     * it under the terms of the GNU General Public License as published by *
+     * the Free Software Foundation, either version 3 of the License, or    *
+     * (at your option) any later version.                                  *
+     *                                                                      *
+     * moShBox is distributed in the hope that it will be useful,           *
+     * but WITHOUT ANY WARRANTY; without even the implied warranty of       *
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
+     * GNU General Public License for more details.                         *
+     *                                                                      *
+     * You should have received a copy of the GNU General Public License    *
+     * along with moShBox.  If not, see <http://www.gnu.org/licenses/>.     *
+     ************************************************************************/
+
+    define('IN_PHPBB', true);
+    $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './../';
+    $phpEx = substr(strrchr(__FILE__, '.'), 1);
+    include($phpbb_root_path.'common.'.$phpEx);
+
+    include($phpbb_root_path.'config.php');
+
+    $link = mysql_connect($dbhost, $dbuser, $dbpasswd);
+    mysql_select_db($dbname);
+
+    $sql = "CREATE TABLE ".$table_prefix."moshbox (";
+    $sql.= "	id BIGINT AUTO_INCREMENT PRIMARY KEY,";
+    $sql.= "	user_id SMALLINT,";
+    $sql.= "	message TEXT,";
+    $sql.= "	ip VARCHAR(16),";
+    $sql.= "	time TIMESTAMP";
+    $sql.= ") CHARACTER SET utf8 COLLATE utf8_unicode_ci;";
+
+    $result = mysql_query($sql) or die(mysql_error());
+
+    mysql_close($link);
+
+    echo "Installation abgeschlossen.";
+    exit;
+
+?>

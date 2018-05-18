@@ -1,0 +1,106 @@
+#moShBox_Shouts
+{
+	overflow: scroll;
+	height: 200px;
+	font-size: 12px;
+	font-family: Verdana;
+	width: 100%;
+}
+
+table.message
+{
+	width: 100%;
+
+	margin: 0px;
+	padding: 0px;
+}
+
+table.message td.message, table.message td.name, table.message td.time, table.message td.removethis
+{
+	padding: 0px 10px 0px 10px;
+
+	border-top: 1px dotted #a9b8c2;
+}
+
+table.message td.message
+{
+	border-left: 1px dotted #a9b8c2;
+
+	overflow: hidden;
+}
+
+table.message td.name
+{
+	font-weight: bold;
+	font-size: 10px;
+
+	width: 10px;
+
+	vertical-align: top;
+
+	text-align: right;
+}
+
+table.message td.time
+{
+	font-size: 10px;
+
+	vertical-align: top;
+
+	text-align: right;
+
+	border-left: 1px dotted #a9b8c2;
+
+	width: 10px;
+}
+
+table.message td.removethis
+{
+	vertical-align: top;
+
+	font-size: 10px;
+	text-align: right;
+
+	border-left: 1px dotted #a9b8c2;
+
+	width: 1px;
+
+	padding: 0px 2px;
+}
+
+/*	Lösch-Link	*/
+table.message a.removethisx
+{
+	color: #e50000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.moshboxbuttonhistory
+{
+	width: 18px;
+	height: 18px;
+
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	border: 1px solid #a9b8c2;	/* phpBB3 subsilver2 border color */
+}
+
+span.user_reference
+{
+	color: #000000;
+	font-weight: bold;
+}
+
+
+
+img.moShBox_MiniButton {
+	padding: 3px;
+}
+
+img.moShBox_MiniButton:hover {
+	padding: 2px;
+	border: 1px solid #888888;
+	background-color: #dddddd;
+}

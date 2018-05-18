@@ -1,0 +1,74 @@
+<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat" colspan="2"><h4>{L_MOSHBOX_TITLE}</h4></td>
+	</tr>
+	<tr>
+		<td class="row1" style="width: 46px;" <!-- IF S_USER_LOGGED_IN -->rowspan="2" <!-- ENDIF -->align="center" valign="middle">
+			<img src="{T_THEME_PATH}/images/moshbox-icon.png" alt="moShBox">
+		</td>
+
+<!-- IF S_USER_LOGGED_IN -->
+
+		<td class="row1" colspan="1" width="100%">
+
+			<p class="genmed">
+
+				<div id="moShBox_Shouts">
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td><img src="{T_THEME_PATH}/images/moshbox-loading.gif" alt=""></td>
+							<td>{L_MOSHBOX_LOADING}</td>
+						</tr>
+					</table>
+				</div>
+
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="row1">
+			<p class="genmed">
+
+				<form name="moShBox_Form" accept-charset="utf-8" onsubmit="moShBox_StoreShout(); return false;" action="" style="display: inline;">
+					<table cellspacing="0" cellpadding="0" style="width: 100%;">
+						<tr>
+							<td style="width: 50px;"><span style="font-weight: bold;">{L_MOSHBOX_MESSAGE}</span></td>
+							<td style="width: 400px;"><input type="text" maxlength="255" name="ShoutText" style="width: 400px;" onMouseOver="moShBox_ShowInfo('USAGE');" onMouseOut="moShBox_ClearInfo();"></td>
+							<td style="width: 50px;"><input type="submit" value="{L_MOSHBOX_SUBMIT}" onMouseOver="moShBox_ShowInfo('SUBMIT');" onMouseOut="moShBox_ClearInfo();" name="ShoutButton"></td>
+							<td style="width: 130px; text-align: left;">
+								&nbsp;&nbsp;
+								<img src="{T_THEME_PATH}/images/moshbox-smilies.png" alt="{L_MOSHBOX_SMILEY_SELECTOR}" title="{L_MOSHBOX_SMILEY_SELECTOR}" onClick="moShBox_SmileySelector_open();" onMouseOver="moShBox_ShowInfo('SMILEY_SELECTOR');" onMouseOut="moShBox_ClearInfo();" class="moShBox_MiniButton">
+								&nbsp;&nbsp;
+								<img src="{T_THEME_PATH}/images/moshbox-save.png" alt="{L_MOSHBOX_SAVE_HISTORY}" title="{L_MOSHBOX_SAVE_HISTORY}" onClick="moShBox_SaveHistory();" onMouseOver="moShBox_ShowInfo('SAVE_HISTORY');" onMouseOut="moShBox_ClearInfo();" class="moShBox_MiniButton">
+								&nbsp;&nbsp;
+								<img src="{T_THEME_PATH}/images/moshbox-autoscroll-on.png" alt="{L_MOSHBOX_AUTOSCROLL_OFF}" title="{L_MOSHBOX_AUTOSCROLL_OFF}" onClick="moShBox_ToggleAutoscroll();" onMouseOver="moShBox_ShowInfo('AUTOSCROLL');" onMouseOut="moShBox_ClearInfo();" id="moShBox_AutoscrollMinibutton" class="moShBox_MiniButton">
+								&nbsp;&nbsp;
+							</td>
+							<td style="text-align: left;">
+								<span id="moShBox_InfoBox"></span>
+							</td>
+							<td style="text-align: right;">
+								<a href="{L_MOSHBOX_HOMELINK}" style="color: #888888; font-size: 9px;">{L_MOSHBOX_VERSION}</a>
+							</td>
+						</tr>
+					</table>
+				</form>
+
+			</p>
+		</td>
+
+<!-- ELSE -->
+
+		<td class="row1">
+			<p class="genmed" style="text-align: center;">
+
+				<br>
+				{L_MOSHBOX_NOT_LOGGED_IN}<br><br>
+
+			</p>
+		</td>
+
+<!-- ENDIF -->
+
+	</tr>
+</table>
